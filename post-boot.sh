@@ -25,9 +25,9 @@ HOMEDIR="/users/$USER"
 echo "$HOMEDIR"
 REPO_URL="https://github.com/OCT-FPGA/Vitis-AI"
 
-docker_dir = "/docker"
+docker_dir="/docker"
 sudo chmod 755 $docker_dir
-sudo chown $USER:octfpga-PG0 docker_dir
+sudo chown $USER:octfpga-PG0 $docker_dir
 bash -c "cd '$docker_dir' && git clone '$REPO_URL' && cd Vitis-AI/board_setup/v70; source install.sh"
 
 sudo usermod -aG docker $USER
