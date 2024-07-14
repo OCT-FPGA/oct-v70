@@ -52,7 +52,7 @@ node.hardware_type = "fpga-r760-v70"
 # Set Storage
 #node.disk = 40
 bs = node.Blockstore("bs", "/docker")
-bs.size = "40GB"
+bs.size = "50GB"
 node.component_manager_id = "urn:publicid:IDN+cloudlab.umass.edu+authority+cm"
 node.addService(pg.Execute(shell="bash", command="sudo /local/repository/post-boot.sh " + params.dockerImage + " >> /local/repository/output_log.txt"))
 
