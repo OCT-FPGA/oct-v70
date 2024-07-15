@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Install remote desktop
-echo "Installing remote desktop software"
-apt install -y ubuntu-gnome-desktop
-echo "Installed gnome desktop"
-systemctl set-default multi-user.target
-apt install -y tigervnc-standalone-server
+# echo "Installing remote desktop software"
+# apt install -y ubuntu-gnome-desktop
+# echo "Installed gnome desktop"
+# systemctl set-default multi-user.target
+# apt install -y tigervnc-standalone-server
 
 DOCKERIMAGE=$1
 echo "$DOCKERIMAGE" > /local/repository/dockerimage.txt
