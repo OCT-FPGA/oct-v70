@@ -48,3 +48,13 @@ echo "Docker data directory updated to $new_data_path"
 # Download Vitis AI docker image
 DOCKERIMAGE=$(cat /local/repository/dockerimage.txt)
 sudo -u $USER docker pull xilinx/vitis-ai-$DOCKERIMAGE-cpu:latest
+
+# Install remote desktop
+echo "Installing remote desktop software"
+apt install -y ubuntu-gnome-desktop
+echo "Installed gnome desktop"
+systemctl set-default multi-user.target
+apt install -y tigervnc-standalone-server
+
+
+
