@@ -7,6 +7,7 @@ sudo apt install -y ubuntu-gnome-desktop
 echo "Installed gnome desktop"
 sudo systemctl set-default multi-user.target
 sudo apt install -y tigervnc-standalone-server
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
 
 DOCKERIMAGE=$1
 echo "$DOCKERIMAGE" > /local/repository/dockerimage.txt
