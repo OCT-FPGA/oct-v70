@@ -26,7 +26,7 @@ imageList = [('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD', '
              ('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD', 'UBUNTU 22.04')] 
 
 dockerImageList = ['pytorch', 'tensorflow', 'tensorflow2']
-dockerImageType = ['cpu', 'gpu']
+dockerImageTypeList = ['cpu', 'gpu']
                    
 pc.defineParameter("osImage", "Select Image",
                    portal.ParameterType.IMAGE,
