@@ -9,7 +9,8 @@ sudo systemctl set-default multi-user.target
 sudo apt install -y tigervnc-standalone-server
 
 DOCKERIMAGE=$1
-echo "$DOCKERIMAGE" > /local/repository/dockerimage.txt
+DOCKERIMAGETYPE=$2
+#echo "$DOCKERIMAGE" > /local/repository/dockerimage.txt
 echo "Install docker"
 apt update 
 apt install -y apt-transport-https ca-certificates curl software-properties-common 
@@ -55,5 +56,5 @@ sudo systemctl restart docker
 echo "Docker data directory updated to $new_data_path"
 
 # Download Vitis AI docker image
-DOCKERIMAGE=$(cat /local/repository/dockerimage.txt)
-sudo -u $USER docker pull xilinx/vitis-ai-$DOCKERIMAGE-cpu:latest
+#DOCKERIMAGE=$(cat /local/repository/dockerimage.txt)
+sudo -u $USER docker pull xilinx/vitis-ai-$DOCKERIMAGE-$DOCKERIMAGETYPE:latest
