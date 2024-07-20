@@ -25,7 +25,8 @@ request = pc.makeRequestRSpec()
 imageList = [('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD', 'UBUNTU 20.04'),
              ('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD', 'UBUNTU 22.04')] 
 
-dockerImageList = [('pytorch'), ('tensorflow'), ('tensorflow2')]
+dockerImageList = ['pytorch', 'tensorflow', 'tensorflow2']
+dockerImageType = ['cpu', 'gpu']
                    
 pc.defineParameter("osImage", "Select Image",
                    portal.ParameterType.IMAGE,
@@ -36,6 +37,11 @@ pc.defineParameter("dockerImage", "Docker Image",
                    portal.ParameterType.STRING,
                    dockerImageList[0], dockerImageList,
                    longDescription="Supported docker images.")  
+
+pc.defineParameter("dockerImageType", "Docker Image Type",
+                   portal.ParameterType.STRING,
+                   dockerImageTypeList[0], dockerImageTypeList,
+                   longDescription="Supported docker image types.")  
 
 # Retrieve the values the user specifies during instantiation.
 params = pc.bindParameters()        
@@ -54,6 +60,6 @@ node.hardware_type = "fpga-r760-v70"
 bs = node.Blockstore("bs", "/docker")
 bs.size = "80GB"
 node.component_manager_id = "urn:publicid:IDN+cloudlab.umass.edu+authority+cm"
-node.addService(pg.Execute(shell="bash", command="sudo /local/repository/post-boot.sh " + params.dockerImage + " >> /local/repository/output_log.txt"))
+node.addService(pg.Execute(shell="bash", command="sudo /local/repository/post-boot.sh " + params.dockerImage + " " + params.dockerImageType + " >> /local/repository/output_log.txt"))
 
 pc.printRequestRSpec(request)
