@@ -25,7 +25,7 @@ request = pc.makeRequestRSpec()
 imageList = [('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD', 'UBUNTU 20.04'),
              ('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD', 'UBUNTU 22.04')] 
 
-dockerImageList = ['pytorch', 'tensorflow', 'tensorflow2']
+dockerImageList = [('pytorch'), ('tensorflow'), ('tensorflow2')]
                    
 pc.defineParameter("osImage", "Select Image",
                    portal.ParameterType.IMAGE,
