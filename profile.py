@@ -1,4 +1,4 @@
-"""OCT Alveo V70 profile with post-boot script. DO NOT USE
+"""OCT Alveo V70 profile with post-boot script. 
 """
 
 # Import the Portal object.
