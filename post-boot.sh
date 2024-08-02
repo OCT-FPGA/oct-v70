@@ -32,7 +32,7 @@ fi
 echo "Home directory:"
 HOMEDIR="/users/$USER"
 echo "$HOMEDIR"
-REPO_URL="https://github.com/Xilinx/Vitis-AI"
+REPO_URL="https://github.com/OCT-FPGA/Vitis-AI"
 
 docker_dir="/docker"
 sudo chmod 755 $docker_dir
